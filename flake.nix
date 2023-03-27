@@ -17,22 +17,19 @@
       mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { inherit (args) system; };
         modules = [ (import ./home.nix) ];
-        inherit (args) extraSpecialArgs;
+        extraSpecialArgs = {
+          inherit username;
+          inherit (args) homeDirectory;
+        };
       };
     in {
       homeConfigurations.nixos = mkHomeConfiguration {
         system = "aarch64-linux";
-        extraSpecialArgs = {
-          inherit username;
-          homeDirectory = "/home/${username}";
-        };
+        homeDirectory = "/home/${username}";
       };
       homeConfigurations.macbook = mkHomeConfiguration {
         system = "aarch64-darwin";
-        extraSpecialArgs = {
-          inherit username;
-          homeDirectory = "/Users/${username}";
-        };
+        homeDirectory = "/Users/${username}";
       };
     };
 }
