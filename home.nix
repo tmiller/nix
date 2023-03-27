@@ -81,11 +81,13 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      color.ui = true;
-      "color \"status\""= {
-        added = "green";
-        changed = "yellow";
-        untracked = "red";
+      color = {
+        ui = true;
+        status = {
+          added = "green";
+          changed = "yellow";
+          untracked = "red";
+        };
       };
       commit = {
         verbose = true;
@@ -124,6 +126,7 @@
       my-commits = "log --author='Tom Miller' --author-date-order --date=format:'%a %b %d %r' --format='%h | %ad | %s'";
       publish = "!git checkout -; echo; git merge --no-ff --no-edit -; echo; git push; echo; git checkout -";
     };
+
     ignores = [
       # OSX
       ".DS_Store"
