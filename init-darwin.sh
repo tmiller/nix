@@ -1,8 +1,12 @@
 #!/bin/sh
 
+repo="github:tmiller/nix-dev-machine"
+
 # Install Nix
 sh <(curl -L https://nixos.org/nix/install)
 
 # Configure Nix
-mkdir -p ~/.config/nix
-echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
+echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf
+
+nix run "${repo}#homeConfigurations.tom.activatePackage"
+home-manager switch --flake "${repo}#tom"
