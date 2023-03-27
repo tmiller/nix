@@ -1,7 +1,7 @@
 { config, pkgs }:
 {
   enable = true;
-  keyMode = "vi"; 
+  keyMode = "vi";
   prefix = "C-space";
   plugins = with pkgs.tmuxPlugins; [
       pain-control
