@@ -24,6 +24,7 @@
     direnv
     exa
     fd
+    fish
     fzf
     gnupg
     k9s
