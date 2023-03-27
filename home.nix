@@ -18,6 +18,7 @@
   # environment.
   home.packages = with pkgs; [
     # pkgs.helm Not available on platform
+    _1password
     awscli2
     bat
     cue
@@ -25,8 +26,8 @@
     exa
     fd
     fzf
-    kubectl
     k9s
+    kubectl
     kubie
     nodejs
     ripgrep

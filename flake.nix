@@ -15,7 +15,10 @@
       username = "tom";
 
       mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { inherit (args) system; };
+        pkgs = import nixpkgs {
+          inherit (args) system;
+          config.allowUnfree = true;
+        };
         modules = [ (import ./home.nix) ];
         extraSpecialArgs = {
           inherit username;
