@@ -79,4 +79,5 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.git = import ./programs/git { inherit config; };
+  programs.neovim = import ./programs/neovim { inherit config pkgs; };
 }
