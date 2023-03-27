@@ -16,20 +16,20 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # pkgs.helm Not available on platform
-    pkgs.awscli2
-    pkgs.bat
-    pkgs.cue
-    pkgs.direnv
-    pkgs.exa
-    pkgs.fd
-    pkgs.fzf
-    pkgs.kubectl
-    pkgs.kubie
-    pkgs.nodejs
-    pkgs.terraform
-    pkgs.terragrunt
+    awscli2
+    bat
+    cue
+    direnv
+    exa
+    fd
+    fzf
+    kubectl
+    kubie
+    nodejs
+    terraform
+    terragrunt
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
