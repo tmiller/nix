@@ -26,7 +26,6 @@
     fd
     fish
     fzf
-    gnupg
     k9s
     kubectl
     kubernetes-helm
@@ -76,13 +75,19 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    GNUPGHOME="${config.xdg.configHome}/gnupg";
+    SSH_AUTH_SOCK="${config.xdg.configHome}/gnupg/S.gpg-agent.ssh";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
   programs.git = import ./programs/git { inherit config; };
   programs.neovim = import ./programs/neovim { inherit config pkgs; };
   programs.tmux = import ./programs/tmux { inherit config pkgs; };
+  programs.gpg = import ./programs/gpg { inherit config pkgs; };
+  #services.gpg-agent = {
+  #  enable = true;
+  #  enableSshSupport = true;
+  #  pinentryFlavor = "tty";
+  #};
 }
