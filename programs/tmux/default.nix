@@ -10,7 +10,6 @@
       yank
   ];
   extraConfig = ''
-    set-window-option -g mode-keys vi
     bind-key 'c' new-window -c "#{pane_current_path}"
     set-option -g status-style "fg=blue,bg=black"
     set-option -g status-left "#[fg=green]#H"
