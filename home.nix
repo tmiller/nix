@@ -26,6 +26,7 @@
     fd
     fzf
     kubectl
+    k9s
     kubie
     nodejs
     ripgrep
