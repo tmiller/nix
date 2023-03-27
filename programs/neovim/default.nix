@@ -130,6 +130,7 @@
     vim-git
     vim-go
     vim-markdown
+    vim-nix
     vim-projectionist
     vim-ragtag
     vim-repeat
