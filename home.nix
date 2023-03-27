@@ -17,7 +17,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # pkgs.helm Not available on platform
     _1password
     awscli2
     bat
@@ -28,6 +27,7 @@
     fzf
     k9s
     kubectl
+    kubernetes-helm
     kubie
     nodejs
     ripgrep
