@@ -87,7 +87,6 @@
         changed = "yellow";
         untracked = "red";
       };
-      credentialHelper:
       commit = {
         verbose = true;
         gpgsign = false;
