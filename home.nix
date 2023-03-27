@@ -28,6 +28,7 @@
     kubectl
     kubie
     nodejs
+    ripgrep
     terraform
     terragrunt
 
