@@ -30,7 +30,7 @@
         system = "aarch64-linux";
         homeDirectory = "/home/${username}";
       };
-      homeConfigurations.macbook = mkHomeConfiguration {
+      homeConfigurations.macos = mkHomeConfiguration {
         system = "aarch64-darwin";
         homeDirectory = "/Users/${username}";
       };
