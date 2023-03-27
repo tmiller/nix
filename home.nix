@@ -17,7 +17,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.hello
     pkgs.awscli2
     pkgs.bat
     pkgs.direnv
