@@ -25,6 +25,7 @@
     exa
     fd
     fzf
+    gnupg
     k9s
     kubectl
     kubernetes-helm
