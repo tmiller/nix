@@ -12,21 +12,27 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-
-      pkgsForSystem = system: import nixpkgs { inherit system; };
+      username = "tom";
 
       mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsForSystem args.system;
+        pkgs = import nixpkgs { inherit (args) system; };
         modules = [ (import ./home.nix) ];
-        extraSpecialArgs = { system = args.system; };
+        inherit (args) extraSpecialArgs;
       };
-
     in {
       homeConfigurations.nixos = mkHomeConfiguration {
         system = "aarch64-linux";
+        extraSpecialArgs = {
+          inherit username;
+          homeDirectory = "/home/${username}";
+        };
       };
       homeConfigurations.macbook = mkHomeConfiguration {
         system = "aarch64-darwin";
+        extraSpecialArgs = {
+          inherit username;
+          homeDirectory = "/Users/${username}";
+        };
       };
     };
 }

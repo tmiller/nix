@@ -3,8 +3,7 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "tom";
-  home.homeDirectory = if lib.strings.hasSuffix "-darwin" specialArgs.system then "/Users/tom" else "/home/tom";
+  home = { inherit (specialArgs) username homeDirectory; };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
