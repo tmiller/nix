@@ -25,7 +25,7 @@
     pkgs.exa
     pkgs.fd
     pkgs.fzf
-    pkgs.helm
+    # pkgs.helm Not available on platform
     pkgs.kubectl
     pkgs.cue
     pkgs.kubie
