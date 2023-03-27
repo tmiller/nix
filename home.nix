@@ -19,7 +19,7 @@
   # environment.
   home.packages = [
     pkgs.hello
-    pkgs.awscliv2
+    pkgs.awscli2
     pkgs.bat
     pkgs.direnv
     pkgs.exa
@@ -30,6 +30,8 @@
     pkgs.cue
     pkgs.kubie
     pkgs.nodejs
+    pkgs.terraform
+    pkgs.terragrunt
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
