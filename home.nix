@@ -24,13 +24,13 @@
     direnv
     exa
     fd
-    fish
     fzf
     k9s
     kubectl
     kubernetes-helm
     kubie
     nodejs
+    nurl
     ripgrep
     terraform
     terragrunt
@@ -85,9 +85,5 @@
   programs.neovim = import ./programs/neovim { inherit config pkgs; };
   programs.tmux = import ./programs/tmux { inherit config pkgs; };
   programs.gpg = import ./programs/gpg { inherit config pkgs; };
-  #services.gpg-agent = {
-  #  enable = true;
-  #  enableSshSupport = true;
-  #  pinentryFlavor = "tty";
-  #};
+  programs.fish = import ./programs/fish { inherit config pkgs; };
 }
