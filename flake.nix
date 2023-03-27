@@ -12,18 +12,21 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      pkgsForSystem = system: import nixpkgs { inherit system; };
+
+      mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsForSystem args.system;
+        modules = [ (import ./home.nix) ];
+        extraSpecialArgs = { system = args.system; };
+      };
+
     in {
-      homeConfigurations.tom = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      homeConfigurations.nixos = mkHomeConfiguration {
+        system = "aarch64-linux";
+      };
+      homeConfigurations.macbook = mkHomeConfiguration {
+        system = "aarch64-darwin";
       };
     };
 }
