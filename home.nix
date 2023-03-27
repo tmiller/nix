@@ -149,13 +149,13 @@
 
       # Emacs
       "*~"
-      "\#*\#"
+      "\\#*\\#"
       "/.emacs.desktop"
       "/.emacs.desktop.lock"
       ".elc"
       "auto-save-list"
       "tramp"
-      ".\#*"
+      ".\\#*"
 
       # Org-mode
       ".org-id-locations"
