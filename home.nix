@@ -17,15 +17,15 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    # pkgs.helm Not available on platform
     pkgs.awscli2
     pkgs.bat
+    pkgs.cue
     pkgs.direnv
     pkgs.exa
     pkgs.fd
     pkgs.fzf
-    # pkgs.helm Not available on platform
     pkgs.kubectl
-    pkgs.cue
     pkgs.kubie
     pkgs.nodejs
     pkgs.terraform
