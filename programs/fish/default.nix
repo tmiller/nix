@@ -1,4 +1,4 @@
-{ config, pkgs }:
+{ config, pkgs, lib, specialArgs }:
 
 let
   home = config.home.homeDirectory;
@@ -21,7 +21,7 @@ in {
     ls = "${pkgs.exa}/bin/exa";
   };
 
-  interactiveShellInit = ''
+  interactiveShellInit = lib.mkIf specialArgs.isDarwin ''
     set --global --export GPG_TTY (tty)
     set --global --export SSH_AUTH_SOCK (${pkgs.gnupg}/bin/gpgconf --list-dirs agent-ssh-socket)
     ${pkgs.gnupg}/bin/gpgconf --launch ${pkgs.gnupg}/bin/gpg-agent
