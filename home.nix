@@ -16,25 +16,30 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
+  home.packages = with pkgs; lib.mkMerge [
+    (lib.mkIf (!specialArgs.isDarwin) [
+      xsel
+    ])
 
-    _1password
-    awscli2
-    bat
-    cue
-    direnv
-    exa
-    fd
-    fzf
-    k9s
-    kubectl
-    kubernetes-helm
-    kubie
-    nodejs
-    nurl
-    ripgrep
-    terraform
-    terragrunt
+    [
+      _1password
+      awscli2
+      bat
+      cue
+      direnv
+      exa
+      fd
+      fzf
+      k9s
+      kubectl
+      kubernetes-helm
+      kubie
+      nodejs
+      nurl
+      ripgrep
+      terraform
+      terragrunt
+    ]
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
