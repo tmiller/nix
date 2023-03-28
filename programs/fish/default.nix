@@ -61,5 +61,12 @@ in {
 
     # The next line updates PATH for the Google Cloud SDK.
     if [ -f '${home}/opt/google-cloud-sdk/path.fish.inc' ]; . '${home}/opt/google-cloud-sdk/path.fish.inc'; end
+
+    set --global --export NPM_CONFIG_USERCONFIG ${config.xdg.configHome}/npm/config
+    set --global --export NPM_CONFIG_CACHE ${config.xdg.cacheHome}/npm
+    set --global --export NPM_CONFIG_PREFIX ${config.xdg.dataHome}/npm
+    if test -d ${config.xdg.dataHome}/npm/bin
+      fish_add_path ${config.xdg.dataHome}/npm/bin
+    end
   '';
 }
