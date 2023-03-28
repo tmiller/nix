@@ -1,9 +1,22 @@
 {config}:
 
+let
+  user_dba = {
+    user = {
+      name = "Tom M";
+      email = "tom@dbadbadba.com";
+      signingKey = "0x28AB3EBD8D9B1464";
+    };
+  };
+in
 {
   enable = true;
 
   extraConfig = {
+    user = {
+      name = "Thomas Miller";
+      email = "git@me.tmiller.com";
+    };
     color = {
       ui = true;
       status = {
@@ -14,12 +27,26 @@
     };
     commit = {
       verbose = true;
-      gpgsign = false;
-    };
-    tag = {
-      gpgsign = false;
     };
   };
+
+  signing = {
+     signByDefault = true;
+     key = "0xA6B3BAA6C1B861FC";
+  };
+
+  includes = [
+    ({
+      contentSuffix = "dba_user_config";
+      contents = user_dba;
+      condition = "hasconfig:remote.*.url:git@gitlab.com:daring-bit-assembly/**";
+    })
+    ({
+      contentSuffix = "dba_user_config";
+      contents = user_dba;
+      condition = "hasconfig:remote.*.url:git@gitlab.com:software224/**";
+    })
+  ];
 
   aliases = {
     st = "status --short --branch";
