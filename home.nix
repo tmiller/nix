@@ -1,4 +1,4 @@
-{ config, pkgs, specialArgs, ... }:
+{ config, lib, pkgs, specialArgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -81,10 +81,20 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs.git = import ./programs/git { inherit config; };
-  programs.neovim = import ./programs/neovim { inherit config pkgs; };
-  programs.tmux = import ./programs/tmux { inherit config pkgs; };
-  programs.gpg = import ./programs/gpg { inherit config pkgs; };
-  programs.fish = import ./programs/fish { inherit config pkgs; };
+  programs = {
+    home-manager.enable = true;
+    git = import ./programs/git { inherit config; };
+    neovim = import ./programs/neovim { inherit config pkgs; };
+    tmux = import ./programs/tmux { inherit config pkgs; };
+    gpg = import ./programs/gpg { inherit config pkgs; };
+    fish = import ./programs/fish { inherit config pkgs; };
+  };
+
+  services = {
+    gpg-agent = lib.mkIf (!specialArgs.isDarwin) {
+      enable = true;
+      enableExtraSocket = true;
+      enableSshSupport = true;
+    };
+  };
 }

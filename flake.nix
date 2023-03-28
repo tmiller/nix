@@ -13,17 +13,23 @@
   outputs = { nixpkgs, home-manager, ... }:
     let
       username = "tom";
+      lib = nixpkgs.lib;
 
-      mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit (args) system;
-          config.allowUnfree = true;
-        };
+      isDarwin = system: (lib.strings.hasSuffix "-darwin" system);
+
+      loadNixpkgs = system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      mkHomeConfiguration = args: home-manager.lib.homeManagerConfiguration rec {
+        pkgs = loadNixpkgs args.system;
         modules = [ (import ./home.nix) ];
-        extraSpecialArgs = {
-          inherit username;
-          inherit (args) homeDirectory;
-        };
+          extraSpecialArgs = {
+            inherit username;
+            inherit (args) homeDirectory;
+            isDarwin = isDarwin args.system;
+          };
       };
     in {
       homeConfigurations.nixos = mkHomeConfiguration {
