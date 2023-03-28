@@ -86,7 +86,7 @@
     git = import ./programs/git { inherit config; };
     neovim = import ./programs/neovim { inherit config pkgs; };
     tmux = import ./programs/tmux { inherit config pkgs; };
-    gpg = import ./programs/gpg { inherit config pkgs; };
+    gpg = import ./programs/gpg { inherit config; };
     fish = import ./programs/fish { inherit config pkgs; };
   };
 

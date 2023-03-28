@@ -1,7 +1,10 @@
-{ config, pkgs }:
+{ config }:
 {
   enable = true;
   homedir = "${config.xdg.configHome}/gnupg";
+  scdaemonSettings = {
+    reader-port = "Yubico Yubi";
+  };
   publicKeys = [
     { source = ./keys/personal.pub; }
     { source = ./keys/dba.pub; }
