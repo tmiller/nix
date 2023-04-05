@@ -22,7 +22,7 @@
     ])
 
     [
-      _1password
+      # _1password
       awscli2
       bat
       cue
