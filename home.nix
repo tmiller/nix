@@ -81,8 +81,6 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    GNUPGHOME="${config.xdg.configHome}/gnupg";
-    SSH_AUTH_SOCK="${config.xdg.configHome}/gnupg/S.gpg-agent.ssh";
   };
 
   # Let Home Manager install and manage itself.
@@ -100,6 +98,10 @@
       enable = true;
       enableExtraSocket = true;
       enableSshSupport = true;
+      sshKeys = [
+        "7F7CF78A1316240108E5837CAC4A50B589E2CDEA"
+        "F717FDE1B01A67A6CAE08303024B28E04483C320"
+      ];
     };
   };
 }

@@ -32,8 +32,12 @@
           };
       };
     in {
-      homeConfigurations.nixos = mkHomeConfiguration {
+      homeConfigurations.nixosArm = mkHomeConfiguration {
         system = "aarch64-linux";
+        homeDirectory = "/home/${username}";
+      };
+      homeConfigurations.nixos = mkHomeConfiguration {
+        system = "x86_64-linux";
         homeDirectory = "/home/${username}";
       };
       homeConfigurations.macos = mkHomeConfiguration {
