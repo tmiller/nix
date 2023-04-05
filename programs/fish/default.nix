@@ -34,6 +34,7 @@ in {
       exec ${pkgs.tmux}/bin/tmux new-session -A -s main
     end
 
+    set --global --export EDITOR nvim
     set --global --export PAGER ${pkgs.less}/bin/less
     set --global --export LESS -ingFXRS
     set --global --export GOPATH ${home}
