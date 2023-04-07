@@ -58,6 +58,10 @@ in {
     set --global --export XDG_DATA_HOME   ${config.xdg.dataHome}
     set --global --export XDG_STATE_HOME  ${config.xdg.stateHome}
 
+    # FZF
+    set -gx FZF_ALT_C_COMMAND "fd --type directory --exclude '{.git,.terraform,.terragrunt-cache,node_modules,vendor,elm-stuff,deps,_build,target,pkg,Library,.Trash}'"
+    set -gx FZF_CTRL_T_COMMAND "fd --type file --exclude '{.git,.terraform,.terragrunt-cache,node_modules,vendor,elm-stuff,deps,_build,target,pkg,Library,.Trash}'"
+
     # The next line updates PATH for the Google Cloud SDK.
     if [ -f '${home}/opt/google-cloud-sdk/path.fish.inc' ]; . '${home}/opt/google-cloud-sdk/path.fish.inc'; end
 
