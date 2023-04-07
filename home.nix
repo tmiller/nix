@@ -85,46 +85,12 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    git = import ./programs/git { inherit config; };
-    neovim = import ./programs/neovim { inherit config pkgs; };
-    tmux = import ./programs/tmux { inherit config pkgs; };
-    gpg = import ./programs/gpg { inherit config; };
-    fish = import ./programs/fish { inherit config pkgs lib specialArgs; };
-    fzf = {
-      enable = true;
-      fileWidgetCommand = builtins.concatStringsSep " " [
-        "fd"
-        "--type directory"
-        "--exclude .git"
-        "--exclude .terraform"
-        "--exclude .terragrunt-cache"
-        "--exclude node_modules"
-        "--exclude vendor"
-        "--exclude elm-stuff"
-        "--exclude deps"
-        "--exclude _build"
-        "--exclude target"
-        "--exclude pkg"
-        "--exclude Library"
-        "--exclude .Trash"
-      ];
-      changeDirWidgetCommand = builtins.concatStringsSep " " [
-        "fd"
-        "--type directory "
-        "--exclude .git"
-        "--exclude .terraform"
-        "--exclude .terragrunt-cache"
-        "--exclude node_modules"
-        "--exclude vendor"
-        "--exclude elm-stuff"
-        "--exclude deps"
-        "--exclude _build"
-        "--exclude target"
-        "--exclude pkg"
-        "--exclude Library"
-        "--exclude .Trash"
-      ];
-    };
+    git    = import ./programs/git.nix    { inherit config; };
+    neovim = import ./programs/neovim.nix { inherit config pkgs; };
+    tmux   = import ./programs/tmux.nix   { inherit config pkgs; };
+    gpg    = import ./programs/gpg        { inherit config; };
+    fish   = import ./programs/fish.nix   { inherit config pkgs lib specialArgs; };
+    fzf    = import ./programs/fzf.nix    { inherit config; };
   };
 
   services = {
