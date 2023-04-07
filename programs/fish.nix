@@ -17,7 +17,6 @@ in {
   ];
 
   shellAliases = {
-    ls = "${pkgs.exa}/bin/exa";
   };
 
   interactiveShellInit = ''
