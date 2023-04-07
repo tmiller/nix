@@ -19,7 +19,7 @@
   ];
   changeDirWidgetCommand = builtins.concatStringsSep " " [
     "fd"
-    "--type directory "
+    "--type directory"
     "--exclude .git"
     "--exclude .terraform"
     "--exclude .terragrunt-cache"
