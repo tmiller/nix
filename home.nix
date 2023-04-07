@@ -22,7 +22,6 @@
     ])
 
     [
-      # _1password
       awscli2
       bat
       cue
@@ -91,6 +90,12 @@
 
   xdg = {
     enable = true;
+    configFile."conda/.condarc".text = ''
+      changeps1: False
+    '';
+    configFile."fish/conf.d/conda.fish".text = ''
+      eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
+    '';
   };
 
   # Let Home Manager install and manage itself.
