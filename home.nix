@@ -91,6 +91,11 @@
 
   xdg = {
     enable = true;
+    configFile."autostart/gnome-keyring-ssh.desktop".text = lib.mkIf (!specialArgs.isDarwin) ''
+      [Desktop Entry]
+      Type=Application
+      Hidden=true
+    '';
     configFile."conda/.condarc".text = ''
       changeps1: False
     '';
