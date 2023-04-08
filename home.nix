@@ -25,6 +25,7 @@
       awscli2
       bat
       cue
+      go
       direnv
       fd
       k9s
