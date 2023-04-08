@@ -99,7 +99,7 @@
     configFile."conda/.condarc".text = ''
       changeps1: False
     '';
-    configFile."fish/conf.d/conda.fish".text = ''
+    configFile."fish/conf.d/conda.fish".text = lib.mkIf specialArgs.isDarwin ''
       eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
     '';
   };
