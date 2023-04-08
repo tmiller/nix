@@ -96,6 +96,7 @@
 
   plugins = with pkgs.vimPlugins; [
     ansible-vim
+    copilot-vim
     {
       plugin = fzf-vim;
       config = ''
@@ -124,6 +125,7 @@
         nmap ga <Plug>(EasyAlign)
       '';
     }
+    vim-cue
     vim-elixir
     vim-endwise
     vim-fish
