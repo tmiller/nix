@@ -19,21 +19,26 @@
   home.packages = with pkgs; lib.mkMerge [
     (lib.mkIf (!specialArgs.isDarwin) [
       xsel
-      zoom-us
       _1password
       _1password-gui
       slack
       tdesktop
       signal-desktop
-      obsidian
       yubikey-manager
       yubikey-manager-qt
     ])
 
+    (lib.mkIf specialArgs.isDarwin [
+      raycast
+    ])
+
     [
+      zoom-us
+      obsidian
       awscli2
       bat
       cue
+      docker
       go
       direnv
       fd
