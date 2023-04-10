@@ -19,6 +19,9 @@
   home.packages = with pkgs; lib.mkMerge [
     (lib.mkIf (!specialArgs.isDarwin) [
       xsel
+      zoom-us
+      _1password
+      _1password-gui
     ])
 
     [
