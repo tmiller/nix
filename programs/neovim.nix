@@ -7,7 +7,7 @@
 
   plugins = with pkgs.vimPlugins; [
     ansible-vim
-    # copilot-vim
+    copilot-vim
     {
       plugin = fzf-vim;
       config = ''
