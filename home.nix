@@ -22,6 +22,7 @@
       zoom-us
       _1password
       _1password-gui
+      slack
     ])
 
     [
@@ -94,17 +95,25 @@
 
   xdg = {
     enable = true;
-    configFile."autostart/gnome-keyring-ssh.desktop".text = lib.mkIf (!specialArgs.isDarwin) ''
-      [Desktop Entry]
-      Type=Application
-      Hidden=true
-    '';
-    configFile."conda/.condarc".text = ''
-      changeps1: False
-    '';
-    configFile."fish/conf.d/conda.fish".text = lib.mkIf specialArgs.isDarwin ''
-      eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
-    '';
+    configFile = {
+      "autostart/gnome-keyring-ssh.desktop" = lib.mkIf (!specialArgs.isDarwin) {
+        text = ''
+          [Desktop Entry]
+          Type=Application
+          Hidden=true
+        '';
+      };
+
+      "conda/.condarc".text = ''
+        changeps1: False
+      '';
+
+      "fish/conf.d/conda.fish" = lib.mkIf specialArgs.isDarwin {
+        text = lib.mkIf specialArgs.isDarwin ''
+          eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
+        '';
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
