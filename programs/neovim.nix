@@ -5,6 +5,53 @@
   vimAlias = true;
   defaultEditor = true;
 
+  plugins = with pkgs.vimPlugins; [
+    ansible-vim
+    # copilot-vim
+    {
+      plugin = fzf-vim;
+      config = ''
+        nnoremap <c-p> :FZF<cr>
+        nnoremap <localleader>b :Buffers<cr>
+        let g:fzf_action = {
+        \ 'ctrl-s': 'split',
+        \ 'ctrl-v': 'vsplit'
+        \ }
+      '';
+    }
+    {
+      plugin = gruvbox;
+      config = ''
+        let g:gruvbox_italic=1
+        set background=dark
+        colorscheme gruvbox
+      '';
+    }
+    rust-vim
+    tabular
+    {
+      plugin = vim-easy-align;
+      config = ''
+        xmap ga <Plug>(EasyAlign)
+        nmap ga <Plug>(EasyAlign)
+      '';
+    }
+    vim-cue
+    vim-elixir
+    vim-endwise
+    vim-fish
+    vim-fugitive
+    vim-git
+    vim-go
+    vim-markdown
+    vim-nix
+    vim-projectionist
+    vim-ragtag
+    vim-repeat
+    vim-surround
+    vim-terraform
+  ];
+
   extraConfig = ''
     " Load plugins
     filetype plugin indent on
@@ -94,50 +141,4 @@
 
   '';
 
-  plugins = with pkgs.vimPlugins; [
-    ansible-vim
-    # copilot-vim
-    {
-      plugin = fzf-vim;
-      config = ''
-        nnoremap <c-p> :FZF<cr>
-        nnoremap <localleader>b :Buffers<cr>
-        let g:fzf_action = {
-        \ 'ctrl-s': 'split',
-        \ 'ctrl-v': 'vsplit'
-        \ }
-      '';
-    }
-    {
-      plugin = gruvbox;
-      config = ''
-        let g:gruvbox_italic=1
-        set background=dark
-        colorscheme gruvbox
-      '';
-    }
-    rust-vim
-    tabular
-    {
-      plugin = vim-easy-align;
-      config = ''
-        xmap ga <Plug>(EasyAlign)
-        nmap ga <Plug>(EasyAlign)
-      '';
-    }
-    vim-cue
-    vim-elixir
-    vim-endwise
-    vim-fish
-    vim-fugitive
-    vim-git
-    vim-go
-    vim-markdown
-    vim-nix
-    vim-projectionist
-    vim-ragtag
-    vim-repeat
-    vim-surround
-    vim-terraform
-  ];
 }
