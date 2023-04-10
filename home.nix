@@ -25,6 +25,9 @@
       slack
       tdesktop
       signal-desktop
+      obsidian
+      yubikey-manager
+      yubikey-manager-qt
     ])
 
     [
