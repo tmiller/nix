@@ -5,6 +5,7 @@
     return {
       font_size = 10.0,
       color_scheme = 'Gruvbox dark, medium (base16)',
+      enable_tab_bar = false,
     }
   '';
 }
