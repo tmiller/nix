@@ -136,7 +136,7 @@
     fish    = import ./programs/fish.nix    { inherit config pkgs lib specialArgs; };
     fzf     = import ./programs/fzf.nix     { inherit config; };
     exa     = import ./programs/exa.nix     { inherit config; };
-    wezterm = import ./programs/wezterm.nix { inherit config; };
+    wezterm = import ./programs/wezterm.nix { inherit config specialArgs; };
   };
 
   services = {
