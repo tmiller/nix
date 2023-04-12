@@ -18,10 +18,11 @@
   # environment.
   home.packages = with pkgs; lib.mkMerge [
     (lib.mkIf (!specialArgs.isDarwin) [
-      xsel
+      conda
+      signal-desktop
       slack
       tdesktop
-      signal-desktop
+      xsel
       yubikey-manager
       yubikey-manager-qt
     ])
