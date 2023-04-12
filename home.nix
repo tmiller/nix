@@ -121,6 +121,10 @@
           eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
         '';
       };
+
+      "nix/nix.conf".text = ''
+        experimental-features = nix-command flakes
+      '';
     };
   };
 
