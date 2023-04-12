@@ -33,24 +33,25 @@
     ])
 
     [
-      zoom-us
-      obsidian
       awscli2
       bat
       cue
-      docker
-      go
       direnv
+      docker
       fd
+      go
       k9s
       kubectl
       kubernetes-helm
       kubie
       nodejs
       nurl
+      nushell
+      obsidian
       ripgrep
       terraform
       terragrunt
+      zoom-us
     ]
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
