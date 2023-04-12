@@ -143,7 +143,8 @@ in
     ".vscode"
     "*.dot"
 
-    # project level config
+    # Direnv
     ".envrc"
+    ".direnv"
   ];
 }

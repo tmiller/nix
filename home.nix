@@ -34,7 +34,6 @@
       awscli
       bat
       cue
-      direnv
       docker
       fd
       go
@@ -136,6 +135,11 @@
     fzf     = import ./programs/fzf.nix     { inherit config; };
     exa     = import ./programs/exa.nix     { inherit config; };
     wezterm = import ./programs/wezterm.nix { inherit config specialArgs; };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 
   services = {
