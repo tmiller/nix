@@ -18,7 +18,6 @@
   # environment.
   home.packages = with pkgs; lib.mkMerge [
     (lib.mkIf (!specialArgs.isDarwin) [
-      conda
       signal-desktop
       slack
       tdesktop
@@ -32,7 +31,7 @@
     ])
 
     [
-      awscli2
+      awscli
       bat
       cue
       direnv

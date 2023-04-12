@@ -127,6 +127,9 @@ in
     "/vendor/bundle"
     "/exec/"
 
+    # Python
+    ".venv"
+
     # ctags
     "tags"
     "TAGS"
