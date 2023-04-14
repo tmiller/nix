@@ -17,10 +17,10 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    discord
     awscli
     bat
     cue
+    discord
     docker
     fd
     go
@@ -37,6 +37,7 @@
     terragrunt
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+    evolution
     signal-desktop
     slack
     tdesktop
