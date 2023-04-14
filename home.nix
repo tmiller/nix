@@ -31,6 +31,7 @@
     ])
 
     [
+      discord
       awscli
       bat
       cue
@@ -99,6 +100,7 @@
     NPM_CONFIG_CACHE      = "${config.xdg.cacheHome}/npm";
     NPM_CONFIG_PREFIX     = "${config.xdg.dataHome}/npm";
     SSH_AUTH_SOCK         = "$(${pkgs.gnupg}/bin/gpgconf --list-dirs agent-ssh-socket)";
+    NIXOS_OZONE_WL        = "1";
   };
 
   xdg = {
