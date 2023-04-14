@@ -122,7 +122,7 @@
       "nix/nix.conf".text = ''
         experimental-features = nix-command flakes
       '';
-      "k9s/skin.yml".source = ./programs/k9s/skin.yml;
+      # "k9s/skin.yml".source = ./programs/k9s/skin.yml;
     };
   };
 
