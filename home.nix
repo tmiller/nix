@@ -16,20 +16,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; lib.mkMerge [
-    (lib.mkIf (!specialArgs.isDarwin) [
-      signal-desktop
-      slack
-      tdesktop
-      xsel
-      yubikey-manager
-      yubikey-manager-qt
-    ])
-
-    (lib.mkIf specialArgs.isDarwin [
-      raycast
-    ])
-
+  home.packages = with pkgs; (
     [
       discord
       awscli
@@ -50,7 +37,18 @@
       terraform
       terragrunt
       zoom-us
+    ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+      signal-desktop
+      slack
+      tdesktop
+      xsel
+      yubikey-manager
+      yubikey-manager-qt
+    ] ++ lib.lists.optionals specialArgs.isDarwin [
+      raycast
     ]
+  );
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -64,7 +62,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
