@@ -33,6 +33,7 @@
     nushell
     obsidian
     ripgrep
+    spotify
     terraform
     terragrunt
     zoom-us
