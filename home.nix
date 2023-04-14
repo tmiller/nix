@@ -16,38 +16,36 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; (
-    [
-      discord
-      awscli
-      bat
-      cue
-      docker
-      fd
-      go
-      k9s
-      kubectl
-      kubernetes-helm
-      kubie
-      nodejs
-      nurl
-      nushell
-      obsidian
-      ripgrep
-      terraform
-      terragrunt
-      zoom-us
-    ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
-      signal-desktop
-      slack
-      tdesktop
-      xsel
-      yubikey-manager
-      yubikey-manager-qt
-    ] ++ lib.lists.optionals specialArgs.isDarwin [
-      raycast
-    ]
-  );
+  home.packages = with pkgs; [
+    discord
+    awscli
+    bat
+    cue
+    docker
+    fd
+    go
+    k9s
+    kubectl
+    kubernetes-helm
+    kubie
+    nodejs
+    nurl
+    nushell
+    obsidian
+    ripgrep
+    terraform
+    terragrunt
+    zoom-us
+  ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+    signal-desktop
+    slack
+    tdesktop
+    xsel
+    yubikey-manager
+    yubikey-manager-qt
+  ] ++ lib.lists.optionals specialArgs.isDarwin [
+    raycast
+  ];
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
