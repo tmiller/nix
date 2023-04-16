@@ -36,7 +36,6 @@
     nushell
     obsidian
     ripgrep
-    spotify
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     (google-cloud-sdk.withExtraComponents [
@@ -49,6 +48,7 @@
     htop
     signal-desktop
     slack
+    spotify
     tdesktop
     xsel
     yubikey-manager
