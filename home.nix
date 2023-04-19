@@ -21,7 +21,6 @@
     bat
     cue
     discord
-    docker
     fd
     go
     google-cloud-sdk
@@ -38,6 +37,7 @@
     terraform
     terragrunt
     zoom-us
+    jetbrains.datagrip
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     evolution
     signal-desktop
@@ -47,6 +47,7 @@
     yubikey-manager
     yubikey-manager-qt
   ] ++ lib.lists.optionals specialArgs.isDarwin [
+    docker
     raycast
   ];
 
