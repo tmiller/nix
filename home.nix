@@ -39,6 +39,7 @@
     zoom-us
     jetbrains.datagrip
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+    efibootmgr
     evolution
     signal-desktop
     slack
