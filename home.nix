@@ -24,6 +24,7 @@
     docker
     fd
     go
+    google-cloud-sdk
     k9s
     kubectl
     kubernetes-helm
