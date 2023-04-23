@@ -39,8 +39,11 @@
     zoom-us
     jetbrains.datagrip
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+    dig
     efibootmgr
     evolution
+    gparted
+    htop
     signal-desktop
     slack
     tdesktop
