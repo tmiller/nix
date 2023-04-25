@@ -17,12 +17,14 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    argocd
     awscli
     bat
     cue
     discord
     fd
     go
+    jetbrains.datagrip
     k9s
     kubectl
     kubernetes-helm
@@ -36,8 +38,10 @@
     terraform
     terragrunt
     zoom-us
-    jetbrains.datagrip
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
+    (google-cloud-sdk.withExtraComponents [
+      google-cloud-sdk.components.gke-gcloud-auth-plugin
+    ])
     dig
     efibootmgr
     evolution
@@ -49,9 +53,6 @@
     xsel
     yubikey-manager
     yubikey-manager-qt
-    (google-cloud-sdk.withExtraComponents [
-      google-cloud-sdk.components.gke-gcloud-auth-plugin
-    ])
   ] ++ lib.lists.optionals specialArgs.isDarwin [
     docker
     raycast
