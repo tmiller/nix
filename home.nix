@@ -23,7 +23,6 @@
     discord
     fd
     go
-    google-cloud-sdk
     k9s
     kubectl
     kubernetes-helm
@@ -50,6 +49,9 @@
     xsel
     yubikey-manager
     yubikey-manager-qt
+    (google-cloud-sdk.withExtraComponents [
+      google-cloud-sdk.components.gke-gcloud-auth-plugin
+    ])
   ] ++ lib.lists.optionals specialArgs.isDarwin [
     docker
     raycast
