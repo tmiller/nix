@@ -29,6 +29,7 @@
     kubectl
     kubernetes-helm
     kubie
+    nixpkgs-fmt
     nodejs
     nurl
     nushell
