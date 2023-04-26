@@ -25,6 +25,7 @@
     fd
     go
     jetbrains.datagrip
+    jetbrains.pycharm-professional
     k9s
     kubectl
     kubernetes-helm
@@ -36,8 +37,6 @@
     obsidian
     ripgrep
     spotify
-    terraform
-    terragrunt
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     (google-cloud-sdk.withExtraComponents [
