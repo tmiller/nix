@@ -47,6 +47,7 @@
     gparted
     htop
     signal-desktop
+    slack
     spotify
     tdesktop
     xsel
