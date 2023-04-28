@@ -26,6 +26,7 @@
     go
     jetbrains.datagrip
     jetbrains.pycharm-professional
+    jq
     k9s
     kubectl
     kubernetes-helm
