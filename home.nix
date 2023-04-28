@@ -47,7 +47,6 @@
     gparted
     htop
     signal-desktop
-    slack
     spotify
     tdesktop
     xsel
@@ -134,7 +133,14 @@
       "nix/nix.conf".text = ''
         experimental-features = nix-command flakes
       '';
+
       # "k9s/skin.yml".source = ./programs/k9s/skin.yml;
+
+      "nixpkgs/config.nix".text = ''
+        {
+          allowUnfree = true;
+        }
+      '';
     };
   };
 
