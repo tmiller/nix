@@ -35,6 +35,7 @@
     nurl
     nushell
     obsidian
+    ocaml
     ripgrep
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
