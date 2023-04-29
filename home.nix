@@ -25,6 +25,7 @@
     fd
     go
     jetbrains.datagrip
+    jetbrains.phpstorm
     jetbrains.pycharm-professional
     jq
     k9s
