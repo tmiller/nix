@@ -24,9 +24,6 @@
     discord
     fd
     go
-    jetbrains.datagrip
-    jetbrains.phpstorm
-    jetbrains.pycharm-professional
     jq
     k9s
     kubectl
@@ -49,6 +46,9 @@
     evolution
     gparted
     htop
+    jetbrains.datagrip
+    jetbrains.phpstorm
+    jetbrains.pycharm-professional
     signal-desktop
     slack
     spotify
