@@ -23,6 +23,7 @@
     cue
     discord
     fd
+    gnumake
     go
     jq
     k9s
