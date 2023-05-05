@@ -24,12 +24,12 @@ in {
 
   shellInit = ''
     # Launch tmux immediately after loading the shell
-    if command --query ${pkgs.tmux}/bin/tmux
-      and status is-interactive
-      and not string match --quiet --regex 'screen|tmux' $TERM
-      # and test -z $TMUX # This is being set somewhere in WezTerm on MacOs
-      exec ${pkgs.tmux}/bin/tmux new-session -A -s main
-    end
+    # if command --query ${pkgs.tmux}/bin/tmux
+    #   and status is-interactive
+    #   and not string match --quiet --regex 'screen|tmux' $TERM
+    #   # and test -z $TMUX # This is being set somewhere in WezTerm on MacOs
+    #   exec ${pkgs.tmux}/bin/tmux new-session -A -s main
+    # end
 
     # Setup Path
     if test -d /opt/homebrew/bin
