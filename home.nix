@@ -42,6 +42,7 @@
     (google-cloud-sdk.withExtraComponents [
       google-cloud-sdk.components.gke-gcloud-auth-plugin
     ])
+    cloud-sql-proxy
     dig
     efibootmgr
     evolution
@@ -50,6 +51,7 @@
     jetbrains.datagrip
     jetbrains.phpstorm
     jetbrains.pycharm-professional
+    jetbrains.webstorm
     nvtop
     signal-desktop
     slack
