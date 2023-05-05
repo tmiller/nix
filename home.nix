@@ -49,6 +49,7 @@
     jetbrains.datagrip
     jetbrains.phpstorm
     jetbrains.pycharm-professional
+    nvtop
     signal-desktop
     slack
     spotify
