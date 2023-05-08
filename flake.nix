@@ -25,6 +25,9 @@
             obsidian = super.obsidian.override {
               electron = self.electron_22;
             };
+            google-cloud-sdk-extra = super.google-cloud-sdk.withExtraComponents [
+              super.google-cloud-sdk.components.gke-gcloud-auth-plugin
+            ];
           })
         ];
       };

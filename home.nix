@@ -39,16 +39,16 @@
     ripgrep
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
-    (google-cloud-sdk.withExtraComponents [
-      google-cloud-sdk.components.gke-gcloud-auth-plugin
-    ])
+    androidStudioPackages.beta
     cloud-sql-proxy
     dig
     efibootmgr
     evolution
+    google-cloud-sdk-extra
     gparted
     htop
     jetbrains.datagrip
+    jetbrains.idea-ultimate
     jetbrains.phpstorm
     jetbrains.pycharm-professional
     jetbrains.webstorm
