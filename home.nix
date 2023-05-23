@@ -63,6 +63,7 @@
   ] ++ lib.lists.optionals specialArgs.isDarwin [
     docker
     raycast
+    ruby_3_2
   ];
 
 
@@ -116,6 +117,10 @@
     NIXOS_OZONE_WL             = "1";
     USE_GKE_GCLOUD_AUTH_PLUGIN = "true";
   };
+
+  home.sessionPath = [
+    "${config.home.homeDirectory}/sdk/flutter/bin"
+  ];
 
   xdg = {
     enable = true;
