@@ -45,12 +45,29 @@
     vim-go
     vim-markdown
     vim-nix
+    {
+      type = "lua";
+      plugin = pkgs.vimUtils.buildVimPlugin {
+        name = "vim-oil";
+        src = pkgs.fetchFromGitHub {
+          owner = "stevearc";
+          repo = "oil.nvim";
+          rev = "d27bfa1f370e8caddf65890364989b76f9794afb";
+          sha256 = "sha256-TTrSbK8TmzbzSGVOU/ASy8bZJ/teFmh9naLLSs2RrAE=";
+        };
+      };
+      config = ''
+        require("oil").setup()
+      '';
+    }
     vim-projectionist
     vim-ragtag
     vim-repeat
     vim-surround
     vim-terraform
   ];
+
+  extraLuaConfig = "\n";
 
   extraConfig = ''
     " Load plugins
