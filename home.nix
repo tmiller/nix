@@ -66,12 +66,9 @@
   ] ++ lib.lists.optionals specialArgs.isDarwin [
     coreutils
     docker
+    inetutils
     raycast
     ruby_3_2
-
-    # System Replacements
-    coreutils
-    inetutils
   ];
 
 
