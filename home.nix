@@ -37,7 +37,9 @@
     obsidian
     ocaml
     ripgrep
+    rustup
     zoom-us
+
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     androidStudioPackages.beta
     cloud-sql-proxy
