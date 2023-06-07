@@ -38,6 +38,7 @@
     ocaml
     ripgrep
     rustup
+    yq
     zoom-us
 
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
