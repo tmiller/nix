@@ -63,8 +63,8 @@
     xsel
     yubikey-manager
     yubikey-manager-qt
-
   ] ++ lib.lists.optionals specialArgs.isDarwin [
+    coreutils
     docker
     raycast
     ruby_3_2
