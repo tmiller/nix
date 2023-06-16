@@ -18,7 +18,7 @@
   # environment.
   home.packages = with pkgs; [
     argocd
-    awscli
+    awscli2
     bat
     cue
     discord
