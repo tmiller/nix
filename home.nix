@@ -139,15 +139,15 @@
         '';
       };
 
-      "conda/.condarc".text = ''
-        changeps1: False
-      '';
+      # "conda/.condarc".text = ''
+      #   changeps1: False
+      # '';
 
-      "fish/conf.d/conda.fish" = lib.mkIf specialArgs.isDarwin {
-        text = lib.mkIf specialArgs.isDarwin ''
-          eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
-        '';
-      };
+      # "fish/conf.d/conda.fish" = lib.mkIf specialArgs.isDarwin {
+      #   text = lib.mkIf specialArgs.isDarwin ''
+      #     eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
+      #   '';
+      # };
 
       "nix/nix.conf".text = ''
         experimental-features = nix-command flakes
