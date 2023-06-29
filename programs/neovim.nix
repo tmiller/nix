@@ -43,7 +43,12 @@
     vim-fugitive
     vim-git
     vim-go
-    vim-markdown
+    {
+      plugin = vim-markdown;
+      config = ''
+        let g:vim_markdown_folding_disabled = 1
+      '';
+    }
     vim-nix
     {
       type = "lua";
