@@ -46,6 +46,11 @@ in
       contents = user_dba;
       condition = "hasconfig:remote.*.url:git@gitlab.com:software224/**";
     })
+    ({
+      contentSuffix = "dba_user_config";
+      contents = user_dba;
+      condition = "hasconfig:remote.*.url:git@bitbucket.org:settlementdatasystems/**";
+    })
   ];
 
   aliases = {
@@ -62,6 +67,7 @@ in
     mc = "merge --log --no-ff";
     rc = "rebase --continue";
     ci = "commit -v";
+    ce = "commit -v --allow-empty";
     amend = "commit -v --amend";
     di = "diff";
     dc = "diff --cached";
