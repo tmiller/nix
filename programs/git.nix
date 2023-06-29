@@ -28,6 +28,9 @@ in
     commit = {
       verbose = true;
     };
+    pull = {
+      ff = true;
+    };
   };
 
   signing = {
