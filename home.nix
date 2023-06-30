@@ -20,6 +20,7 @@
     argocd
     awscli2
     bat
+    coreutils 
     cue
     discord
     fd
@@ -30,6 +31,8 @@
     kubectl
     kubernetes-helm
     kubie
+    ldns # supplies drill replacement for dig
+    mtr
     nixpkgs-fmt
     nodejs
     nurl
@@ -40,7 +43,6 @@
     rustup
     yq
     zoom-us
-
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     androidStudioPackages.beta
     cloud-sql-proxy
@@ -50,6 +52,7 @@
     google-cloud-sdk-extra
     gparted
     htop
+    inetutils
     jetbrains.datagrip
     jetbrains.idea-ultimate
     jetbrains.phpstorm
@@ -64,7 +67,6 @@
     yubikey-manager
     yubikey-manager-qt
   ] ++ lib.lists.optionals specialArgs.isDarwin [
-    coreutils
     docker
     inetutils
     raycast
