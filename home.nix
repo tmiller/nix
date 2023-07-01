@@ -33,12 +33,14 @@
     kubie
     ldns # supplies drill replacement for dig
     mtr
+    mysql
     nixpkgs-fmt
     nodejs
     nurl
     nushell
     obsidian
     ocaml
+    postgresql
     ripgrep
     rustup
     yq
