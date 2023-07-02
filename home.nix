@@ -40,7 +40,7 @@
     nushell
     obsidian
     ocaml
-    postgresql
+    postgresql_15
     ripgrep
     rustup
     yq
