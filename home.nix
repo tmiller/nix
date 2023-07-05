@@ -48,6 +48,7 @@
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     androidStudioPackages.beta
     cloud-sql-proxy
+    ctags
     dig
     efibootmgr
     evolution
@@ -60,6 +61,8 @@
     jetbrains.phpstorm
     jetbrains.pycharm-professional
     jetbrains.webstorm
+    libreoffice-fresh
+    livebook
     nvtop
     signal-desktop
     slack
