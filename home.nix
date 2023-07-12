@@ -52,6 +52,7 @@
     dig
     efibootmgr
     evolution
+    file
     google-cloud-sdk-extra
     gparted
     htop
@@ -62,6 +63,7 @@
     jetbrains.pycharm-professional
     jetbrains.webstorm
     libreoffice-fresh
+    libxml2
     livebook
     nvtop
     signal-desktop
