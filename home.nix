@@ -47,6 +47,7 @@
     zoom-us
   ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
     androidStudioPackages.beta
+    appimage-run
     cloud-sql-proxy
     ctags
     dig
