@@ -27,6 +27,7 @@
     gnumake
     go
     jq
+    jwt-cli
     k9s
     kubectl
     kubernetes-helm
@@ -55,6 +56,7 @@
     evolution
     file
     google-cloud-sdk-extra
+    gnucash
     gparted
     htop
     inetutils
@@ -63,10 +65,11 @@
     jetbrains.phpstorm
     jetbrains.pycharm-professional
     jetbrains.webstorm
-    libreoffice-fresh
+    # libreoffice-fresh
     libxml2
     livebook
     nvtop
+    ruby
     signal-desktop
     slack
     spotify
