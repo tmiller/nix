@@ -181,13 +181,14 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    git     = import ./programs/git.nix     { inherit config; };
-    neovim  = import ./programs/neovim.nix  { inherit config pkgs; };
-    tmux    = import ./programs/tmux.nix    { inherit config pkgs; };
-    gpg     = import ./programs/gpg         { inherit config; };
+    exa     = import ./programs/exa.nix     { inherit config; };
     fish    = import ./programs/fish.nix    { inherit config pkgs lib specialArgs; };
     fzf     = import ./programs/fzf.nix     { inherit config; };
-    exa     = import ./programs/exa.nix     { inherit config; };
+    git     = import ./programs/git.nix     { inherit config; };
+    gpg     = import ./programs/gpg         { inherit config; };
+    neovim  = import ./programs/neovim.nix  { inherit config pkgs; };
+    tmux    = import ./programs/tmux.nix    { inherit config pkgs; };
+    vscode  = import ./programs/vscode.nix  { inherit config pkgs; };
     wezterm = import ./programs/wezterm.nix { inherit config specialArgs; };
 
     direnv = {
