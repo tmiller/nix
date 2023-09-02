@@ -65,7 +65,7 @@
     jetbrains.phpstorm
     jetbrains.pycharm-professional
     jetbrains.webstorm
-    # libreoffice-fresh
+    libreoffice-fresh
     libxml2
     livebook
     nvtop
