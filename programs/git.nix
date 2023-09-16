@@ -54,6 +54,11 @@ in
       contents = user_dba;
       condition = "hasconfig:remote.*.url:git@bitbucket.org:settlementdatasystems/**";
     })
+    ({
+      contentSuffix = "dba_user_config";
+      contents = user_dba;
+      condition = "hasconfig:remote.*.url:git@bitbucket.org:vistaproducers/**";
+    })
   ];
 
   aliases = {
