@@ -68,6 +68,8 @@
     libreoffice-fresh
     libxml2
     livebook
+    navicat
+    navicat-desktop
     nvtop
     ruby
     signal-desktop

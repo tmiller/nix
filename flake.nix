@@ -28,6 +28,24 @@
             google-cloud-sdk-extra = super.google-cloud-sdk.withExtraComponents [
               super.google-cloud-sdk.components.gke-gcloud-auth-plugin
             ];
+            navicat = super.appimageTools.wrapType1 {
+              name = "navicat";
+              version = "16";
+
+              src = super.fetchurl {
+                url = "https://download3.navicat.com/download/navicat16-premium-en.AppImage";
+                hash = "sha256-GiBSEle0xNvcU/dZGQgj7H3OMMyOho+LqjORCcFlMcM=";
+              };
+            };
+            navicat-desktop = super.writeTextDir "share/applications/navicat16-premium.desktop" ''
+              [Desktop Entry]
+              Version=16
+              Type=Application
+              Name=Navicat
+              Exec=navicat
+              Icon=/home/pascal/Applications/icons/navicat-premium.png
+              StartupWMClass=AppRun
+            '';
           })
         ];
       };
