@@ -183,7 +183,7 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    exa     = import ./programs/exa.nix     { inherit config; };
+    eza     = import ./programs/eza.nix     { inherit config; };
     fish    = import ./programs/fish.nix    { inherit config pkgs lib specialArgs; };
     fzf     = import ./programs/fzf.nix     { inherit config; };
     git     = import ./programs/git.nix     { inherit config; };
