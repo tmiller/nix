@@ -36,6 +36,7 @@
     mtr
     mysql
     nixpkgs-fmt
+    #nodejs_14
     nodejs
     nurl
     nushell
@@ -174,6 +175,9 @@
 
       "nixpkgs/config.nix".text = ''
         {
+          permittedInsecurePackages = [
+            "nodejs-14.21.3"
+          ];
           allowUnfree = true;
         }
       '';
