@@ -42,6 +42,7 @@
     nushell
     obsidian
     ocaml
+    openssl
     postgresql_15
     ripgrep
     rustup
