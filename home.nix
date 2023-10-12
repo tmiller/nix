@@ -24,6 +24,7 @@
     cue
     discord
     fd
+    flyway
     gnumake
     go
     jq
