@@ -35,10 +35,11 @@
     kubernetes-helm
     kubie
     ldns # supplies drill replacement for dig
+    liquibase
     mtr
     mysql
     nixpkgs-fmt
-    #nodejs_14
+    # nodejs_14
     nodejs
     nurl
     nushell
