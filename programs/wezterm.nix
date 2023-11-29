@@ -1,6 +1,6 @@
-{ config, specialArgs }:
+{ config }:
 let
-  fontSize = if specialArgs.isDarwin then "12.0" else "10.0";
+  fontSize = "10.0";
 in
 {
   enable = true;
