@@ -39,7 +39,7 @@
                   version = "16";
 
                   src = super.fetchurl {
-                    url = "https://download3.navicat.com/download/navicat16-premium-en.AppImage";
+                    url = "https://dn.navicat.com/download/navicat16-premium-en.AppImage";
                     hash = "sha256-GiBSEle0xNvcU/dZGQgj7H3OMMyOho+LqjORCcFlMcM=";
                   };
                 };
