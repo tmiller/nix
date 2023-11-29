@@ -21,6 +21,7 @@
             config =  {
               allowUnfree = true;
               permittedInsecurePackages = [
+                "electron-22.3.27"
                 "nodejs-14.21.3"
                 "openssl-1.1.1v"
                 "openssl-1.1.1w"

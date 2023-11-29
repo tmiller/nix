@@ -5,14 +5,14 @@
   home.packages = with pkgs; [
     androidStudioPackages.beta
     appimage-run
-    cloud-sql-proxy
     ctags
     dig
     efibootmgr
     evolution
     file
-    google-cloud-sdk-extra
     gnucash
+    google-cloud-sdk-extra
+    google-cloud-sql-proxy
     gparted
     htop
     inetutils
@@ -21,6 +21,7 @@
     jetbrains.phpstorm
     jetbrains.pycharm-professional
     jetbrains.webstorm
+    libreoffice
     libreoffice-fresh
     libxml2
     livebook
