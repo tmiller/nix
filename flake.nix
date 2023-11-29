@@ -11,16 +11,10 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      username = "tom";
-
-      setupHomeManager = name: settings: 
+      setupHomeManager = name: settings:
         home-manager.lib.homeManagerConfiguration {
           modules = [
-            {
-              home.username = username;
-              home.homeDirectory = "${settings.homePath}/${username}";
-            }
-            ./home.nix
+            ./systems/all.nix
           ] ++ settings.modules;
           pkgs = import nixpkgs {
             system = settings.system;
@@ -66,22 +60,19 @@
       configurations = {
         nixosArm = {
           system = "aarch64-linux";
-          modules = [ ./nixos.nix ];
-          homePath = "/home";
+          modules = [ ./systems/nixos.nix ];
         };
         nixos = {
           system = "x86_64-linux";
-          modules = [ ./nixos.nix ];
-          homePath = "/home";
+          modules = [ ./systems/nixos.nix ];
         };
         macos = {
           system = "aarch64-darwin";
-          modules = [ ./darwin.nix ];
-          homePath = "/Users";
+          modules = [ ./systems/darwin.nix ];
         };
       };
 
-    in 
+    in
     {
       homeConfigurations = nixpkgs.lib.attrsets.mapAttrs setupHomeManager configurations;
     };

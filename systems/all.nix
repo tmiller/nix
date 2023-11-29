@@ -7,6 +7,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
+  home.username = "tom";
   home.stateVersion = "22.11"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
@@ -17,7 +18,7 @@
     awscli2
     bat
     cachix
-    coreutils 
+    coreutils
     cue
     discord
     fd
@@ -136,15 +137,15 @@
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-    eza     = import ./programs/eza.nix     { inherit config; };
-    fish    = import ./programs/fish.nix    { inherit config pkgs; };
-    fzf     = import ./programs/fzf.nix     { inherit config; };
-    git     = import ./programs/git.nix     { inherit config; };
-    gpg     = import ./programs/gpg         { inherit config; };
-    neovim  = import ./programs/neovim.nix  { inherit config pkgs; };
-    tmux    = import ./programs/tmux.nix    { inherit config pkgs; };
-    vscode  = import ./programs/vscode.nix  { inherit config pkgs; };
-    wezterm = import ./programs/wezterm.nix { inherit config; };
+    eza     = import ../programs/eza.nix     { inherit config; };
+    fish    = import ../programs/fish.nix    { inherit config pkgs; };
+    fzf     = import ../programs/fzf.nix     { inherit config; };
+    git     = import ../programs/git.nix     { inherit config; };
+    gpg     = import ../programs/gpg         { inherit config; };
+    neovim  = import ../programs/neovim.nix  { inherit config pkgs; };
+    tmux    = import ../programs/tmux.nix    { inherit config pkgs; };
+    vscode  = import ../programs/vscode.nix  { inherit config pkgs; };
+    wezterm = import ../programs/wezterm.nix { inherit config; };
 
     direnv = {
       enable = true;

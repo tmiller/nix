@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
 {
+  home.homeDirectory = "/home/${config.home.username}";
+
   home.packages = with pkgs; [
     androidStudioPackages.beta
     appimage-run
