@@ -1,10 +1,5 @@
 { config, lib, pkgs, specialArgs, ... }:
-
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home = { inherit (specialArgs) username homeDirectory; };
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -21,6 +16,7 @@
     argocd
     awscli2
     bat
+    cachix
     coreutils 
     cue
     discord
@@ -51,44 +47,6 @@
     rustup
     yq
     zoom-us
-  ] ++ lib.lists.optionals (!specialArgs.isDarwin) [
-    androidStudioPackages.beta
-    appimage-run
-    cloud-sql-proxy
-    ctags
-    dig
-    efibootmgr
-    evolution
-    file
-    google-cloud-sdk-extra
-    gnucash
-    gparted
-    htop
-    inetutils
-    jetbrains.datagrip
-    jetbrains.idea-ultimate
-    jetbrains.phpstorm
-    jetbrains.pycharm-professional
-    jetbrains.webstorm
-    libreoffice-fresh
-    libxml2
-    livebook
-    navicat
-    navicat-desktop
-    nvtop
-    ruby
-    signal-desktop
-    slack
-    spotify
-    tdesktop
-    xsel
-    yubikey-manager
-    yubikey-manager-qt
-  ] ++ lib.lists.optionals specialArgs.isDarwin [
-    docker
-    inetutils
-    raycast
-    ruby_3_2
   ];
 
 
@@ -151,23 +109,10 @@
   xdg = {
     enable = true;
     configFile = {
-      "autostart/gnome-keyring-ssh.desktop" = lib.mkIf (!specialArgs.isDarwin) {
-        text = ''
-          [Desktop Entry]
-          Type=Application
-          Hidden=true
-        '';
-      };
 
       # "conda/.condarc".text = ''
       #   changeps1: False
       # '';
-
-      # "fish/conf.d/conda.fish" = lib.mkIf specialArgs.isDarwin {
-      #   text = lib.mkIf specialArgs.isDarwin ''
-      #     eval /opt/homebrew/bin/conda "shell.fish" "hook" $argv | source
-      #   '';
-      # };
 
       "nix/nix.conf".text = ''
         experimental-features = nix-command flakes
@@ -192,30 +137,18 @@
   programs = {
     home-manager.enable = true;
     eza     = import ./programs/eza.nix     { inherit config; };
-    fish    = import ./programs/fish.nix    { inherit config pkgs lib specialArgs; };
+    fish    = import ./programs/fish.nix    { inherit config pkgs; };
     fzf     = import ./programs/fzf.nix     { inherit config; };
     git     = import ./programs/git.nix     { inherit config; };
     gpg     = import ./programs/gpg         { inherit config; };
     neovim  = import ./programs/neovim.nix  { inherit config pkgs; };
     tmux    = import ./programs/tmux.nix    { inherit config pkgs; };
     vscode  = import ./programs/vscode.nix  { inherit config pkgs; };
-    wezterm = import ./programs/wezterm.nix { inherit config specialArgs; };
+    wezterm = import ./programs/wezterm.nix { inherit config; };
 
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-    };
-  };
-
-  services = {
-    gpg-agent = lib.mkIf (!specialArgs.isDarwin) {
-      enable = true;
-      enableExtraSocket = true;
-      enableSshSupport = true;
-      sshKeys = [
-        "7F7CF78A1316240108E5837CAC4A50B589E2CDEA"
-        "F717FDE1B01A67A6CAE08303024B28E04483C320"
-      ];
     };
   };
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, specialArgs }:
+{ config, pkgs }:
 
 let
   home = config.home.homeDirectory;
