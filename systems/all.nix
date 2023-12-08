@@ -46,6 +46,7 @@
     postgresql_15
     ripgrep
     rustup
+    shellcheck
     yq
     zoom-us
   ];
