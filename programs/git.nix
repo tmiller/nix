@@ -15,7 +15,7 @@ in
   extraConfig = {
     user = {
       name = "Thomas Miller";
-      email = "git@me.tmiller.com";
+      email = "git@me.tmiller.dev";
     };
     color = {
       ui = true;
