@@ -19,6 +19,7 @@
     bat
     cachix
     coreutils
+    csvq
     cue
     discord
     fd
