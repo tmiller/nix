@@ -37,6 +37,8 @@
       '';
     }
     vim-cue
+    vim-dadbod
+    vim-dispatch
     vim-elixir
     vim-endwise
     vim-fish

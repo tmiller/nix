@@ -20,6 +20,7 @@
     jetbrains.idea-ultimate
     jetbrains.phpstorm
     jetbrains.pycharm-professional
+    jetbrains.rider
     jetbrains.webstorm
     libreoffice
     libreoffice-fresh
