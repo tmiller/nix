@@ -37,6 +37,7 @@
     liquibase
     mtr
     mysql
+    nixd
     nixpkgs-fmt
     # nodejs_14
     nodejs
