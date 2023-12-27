@@ -21,6 +21,7 @@
     coreutils
     csvq
     cue
+    devbox
     discord
     fd
     flyway
