@@ -50,7 +50,9 @@
     ripgrep
     rustup
     shellcheck
+    unzip
     yq
+    zip
     zoom-us
   ];
 
