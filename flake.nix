@@ -61,7 +61,6 @@
                   StartupWMClass=AppRun
                 '';
               })
-
             ];
           };
         };
@@ -75,14 +74,26 @@
           system = "x86_64-linux";
           modules = [ ./systems/nixos.nix ];
         };
+
         macos = {
           system = "aarch64-darwin";
           modules = [ ./systems/darwin.nix ];
         };
       };
-
+      names = builtins.attrNames configurations;
     in
     {
       homeConfigurations = nixpkgs.lib.attrsets.mapAttrs setupHomeManager configurations;
+
+      nixd.config = nixpkgs.lib.genAttrs names (name:
+        {
+          options = {
+            enable = true;
+            target = {
+              args = [ ".#homeConfigurations.${name}.options" ];
+              installable = "";
+            };
+          };
+        });
     };
 }
