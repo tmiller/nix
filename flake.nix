@@ -2,14 +2,20 @@
   description = "Home Manager configuration of tom";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixd = {
+      url = "github:nix-community/nixd/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, nixd, ... }:
     let
       setupHomeManager = name: settings:
         home-manager.lib.homeManagerConfiguration {
@@ -18,7 +24,7 @@
           ] ++ settings.modules;
           pkgs = import nixpkgs {
             system = settings.system;
-            config =  {
+            config = {
               allowUnfree = true;
               permittedInsecurePackages = [
                 "electron-22.3.27"
@@ -28,6 +34,7 @@
               ];
             };
             overlays = [
+              nixd.overlays.default
               (self: super: {
                 obsidian = super.obsidian.override {
                   electron = self.electron_22;
@@ -54,6 +61,7 @@
                   StartupWMClass=AppRun
                 '';
               })
+
             ];
           };
         };

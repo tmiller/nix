@@ -1,4 +1,4 @@
-{config, pkgs}:
+{ config, pkgs }:
 {
   enable = true;
   viAlias = true;
@@ -32,7 +32,14 @@
       type = "lua";
       config = ''
         local lspconfig = require('lspconfig')
-        lspconfig.nixd.setup{}
+        lspconfig.nixd.setup {}
+
+        -- Global mappings.
+        -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+        vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+        vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
@@ -90,7 +97,6 @@
         let g:vim_markdown_folding_disabled = 1
       '';
     }
-    vim-nix
     {
       type = "lua";
       plugin = pkgs.vimUtils.buildVimPlugin {
@@ -113,7 +119,10 @@
     vim-terraform
   ];
 
-  extraLuaConfig = "\n";
+  # Needs extra newline at the top for conat reasons
+  extraLuaConfig = ''
+
+  '';
 
   extraConfig = ''
     " Load plugins
