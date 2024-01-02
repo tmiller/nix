@@ -29,7 +29,6 @@
     navicat
     navicat-desktop
     nvtop
-    ruby
     signal-desktop
     slack
     spotify
