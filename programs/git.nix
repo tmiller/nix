@@ -12,14 +12,14 @@ in
 {
   enable = true;
 
-  rerere = {
-    enabled = true;
-  };
 
   extraConfig = {
     user = {
       name = "Thomas Miller";
       email = "git@me.tmiller.dev";
+    };
+    rerere = {
+      enabled = true;
     };
     color = {
       ui = true;
