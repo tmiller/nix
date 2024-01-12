@@ -13,9 +13,14 @@
       url = "github:nix-community/nixd/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    attic = {
+      url = "github:zhaofengli/attic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixd, ... }:
+  outputs = { nixpkgs, home-manager, nixd, attic, ... }:
     let
       setupHomeManager = name: settings:
         home-manager.lib.homeManagerConfiguration {
@@ -35,6 +40,7 @@
             };
             overlays = [
               nixd.overlays.default
+              attic.overlays.default
               (self: super: {
                 obsidian = super.obsidian.override {
                   electron = self.electron_22;

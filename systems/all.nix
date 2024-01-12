@@ -32,6 +32,7 @@
   home.packages = with pkgs; [
     argo
     argocd
+    attic
     awscli2
     bat
     cachix
