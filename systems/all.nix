@@ -6,15 +6,15 @@
 
   # Look up better patterns for this.
   imports = [
-    ../programs/eza.nix
-    ../programs/fish.nix
-    ../programs/fzf.nix
-    ../programs/git.nix
+    ../programs/eza
+    ../programs/fish
+    ../programs/fzf
+    ../programs/git
     ../programs/gpg
-    ../programs/neovim.nix
-    ../programs/tmux.nix
-    ../programs/vscode.nix
-    ../programs/wezterm.nix
+    ../programs/neovim
+    ../programs/tmux
+    ../programs/vscode
+    ../programs/wezterm
   ];
 
   # Let Home Manager install and manage itself.
