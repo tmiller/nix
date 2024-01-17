@@ -84,7 +84,6 @@
     NPM_CONFIG_USERCONFIG      = "${config.xdg.configHome}/npm/config";
     NPM_CONFIG_CACHE           = "${config.xdg.cacheHome}/npm";
     NPM_CONFIG_PREFIX          = "${config.xdg.dataHome}/npm";
-    SSH_AUTH_SOCK              = "$(${pkgs.gnupg}/bin/gpgconf --list-dirs agent-ssh-socket)";
     NIXOS_OZONE_WL             = "1";
     USE_GKE_GCLOUD_AUTH_PLUGIN = "true";
   };

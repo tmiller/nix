@@ -22,9 +22,6 @@ in
       git-root = "cd (git rev-parse --show-toplevel)";
     };
 
-    interactiveShellInit = ''
-    '';
-
     shellInit = ''
       # Launch tmux immediately after loading the shell
       # if command --query ${pkgs.tmux}/bin/tmux
