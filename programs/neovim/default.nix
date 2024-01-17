@@ -34,6 +34,7 @@
         config = ''
           local lspconfig = require('lspconfig')
           lspconfig.nixd.setup {}
+          lspconfig.nickel_ls.setup {}
 
           -- Global mappings.
           -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -98,6 +99,7 @@
           let g:vim_markdown_folding_disabled = 1
         '';
       }
+      vim-nickel
       {
         type = "lua";
         plugin = pkgs.vimUtils.buildVimPlugin {

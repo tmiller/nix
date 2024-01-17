@@ -58,6 +58,7 @@
     nickel
     nixd
     nixpkgs-fmt
+    nls
     nodejs
     # nodejs_14
     nurl
