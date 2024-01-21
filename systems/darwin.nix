@@ -6,6 +6,10 @@ in
 {
   home.homeDirectory = "/Users/${config.home.username}";
 
+  # nix.settings = {
+  #   builders = [ "ssh-ng://remote-builder x86_64-linux" ];
+  # };
+
   home.packages = with pkgs; [
     docker
     inetutils

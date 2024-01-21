@@ -94,23 +94,25 @@
     "${config.home.homeDirectory}/sdk/flutter/bin"
   ];
 
+
+  nix.package = pkgs.nixUnstable;
+
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    keep-outputs = true;
+    keep-derivations = true;
+  };
+
+  nixpkgs.config = {
+    permittedInsecurePackages = [
+      "nodejs-14.21.3"
+    ];
+    allowUnfree = true;
+  };
+
   xdg = {
     enable = true;
     configFile = {
-      "nix/nix.conf".text = ''
-        experimental-features = nix-command flakes
-        keep-outputs = true
-        keep-derivations = true
-      '';
-
-      "nixpkgs/config.nix".text = ''
-        {
-          permittedInsecurePackages = [
-            "nodejs-14.21.3"
-          ];
-          allowUnfree = true;
-        }
-      '';
     };
   };
 
